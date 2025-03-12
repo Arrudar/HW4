@@ -1,14 +1,27 @@
 <h1><%= @place["name"] %></h1>
 
-<h2>My Entries</h2>
-<% for entry in @entries %>
-  <h3><%= entry["title"] %></h3>
-  <h4><%= entry["occurred_on"] %></h4>
-  <p><%= entry["description"] %></p>
-<% end %>
+<h2>My Posts</h2>
+<div class="row">
+  <% @entries.each do |entry| %>
+    <div class="col-md-4 mb-4">
+      <h5><%= entry["title"] %></h5>
+      <p class="text-secondary"><%= entry["occurred_on"] %></p>
+      
+      <div class="border d-flex align-items-center justify-content-center" style="height: 300px;">
+        <% if entry["image"].present? %>
+          <img src="<%= entry["image"] %>" class="img-fluid">
+        <% else %>
+          <span class="text-secondary">double-click to select image</span>
+        <% end %>
+      </div>
+      
+      <p class="mt-3"><%= entry["description"] %></p>
+    </div>
+  <% end %>
+</div>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-outline-dark mb-3">New Post</a>
 </p>
 
 <p>
