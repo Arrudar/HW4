@@ -15,9 +15,16 @@
     </div>
     <div>
       <a href="/">Home</a>
-      <a href="/logout">Logout</a>
-      <a href="/login">Login</a>
-      <a href="/users/new">Signup</a>
+          <% if @current_user %>
+            <!-- Show only when user is logged in -->
+            Logged in as: <%= @current_user["username"] %>
+            <a href="/logout">Logout</a>
+          <% else %>
+      
+            <!-- To show only if user is NOT logged in -->
+            <a href="/login">Login</a>
+            <a href="/users/new">Signup</a>
+          <% end %>
     </div>
 
     <%= yield %>

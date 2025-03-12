@@ -13,12 +13,12 @@ class SessionsController < ApplicationController
         redirect_to "/places"
       else
         flash["notice"] = "NOPE! Unsuccessful login."
-        redirect_to "/sessions/new"
+        redirect_to "/login"
       end
 
     else
       flash["notice"] = "NOPE! Unsuccessful login."
-      redirect_to "/sessions/new"
+      redirect_to "/login"
     end
 
   end
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   def destroy
     session["user_id"] = nil
     flash["notice"] = "Goodbye fella!"
-    redirect_to "/sessions/new"
+    redirect_to "/login"
 
   end
 end
