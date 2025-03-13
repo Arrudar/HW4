@@ -17,6 +17,7 @@ Rails.application.configure do
   # Enable server timing
   config.server_timing = true
 
+
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join("tmp/caching-dev.txt").exist?
@@ -67,4 +68,7 @@ Rails.application.configure do
   
   # So we don't get the "Cannot render console" message in Gitpod
   config.web_console.whiny_requests = false
+
+   # Service to use for attachments
+   config.active_storage.service = :local
 end
