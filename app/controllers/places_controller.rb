@@ -15,7 +15,7 @@ class PlacesController < ApplicationController
     
     # Only show if it belongs to current user
     if @place && @current_user && @place["user_id"] == @current_user["id"]
-      @entries = Entry.where({ "place_id" => @place["id"] })
+      @entries = Entry.where({ "place_id" => @place["id"] }).order("created_at DESC")
     else
       if @current_user
         flash["notice"] = "Not authorized to view this place"

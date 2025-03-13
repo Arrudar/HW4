@@ -9,15 +9,13 @@
       
       <div class="border d-flex align-items-center justify-content-center" style="height: 300px;">
         
-        <% if entry.uploaded_image.attached? %>
-          <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
-        <% else %>
-          <div class="border p-3 text-center text-muted">
-            
+      <% if entry.uploaded_image.attached? %>
+        <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+      <% else %>
+        <div class="border p-3 text-center text-muted">
           <img src="/images/No_image.jpg" class="img-fluid">
-
-          </div>
-        <% end %>
+        </div>
+      <% end %>
       
       </div>
       
