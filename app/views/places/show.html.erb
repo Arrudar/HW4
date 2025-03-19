@@ -10,11 +10,11 @@
       <div class="border d-flex align-items-center justify-content-center" style="height: 300px;">
         
       <% if entry.uploaded_image.attached? %>
-        <div class="entry-image-container">
+        <div class="image-container">
           <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
         </div>
       <% else %>
-        <div class="entry-image-container">
+        <div class="image-container">
           <img src="/images/No_image.jpg" class="img-fluid">
         </div>
       <% end %>
